@@ -1,0 +1,96 @@
+html {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+}
+
+body {
+  margin:0;
+}
+
+.img-box > img {
+  width:100%;
+  display:block;
+}
+
+.box-1 {
+  margin-top:100px;
+  width:300px;
+  margin:0 auto;
+}
+
+.box-1 {
+  cursor:pointer;
+}
+
+.box-1 > *:not(:first-child) {
+  text-align:center;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.box-1 > .prod-name {
+  font-size:1.4rem;
+}
+
+.box-1 > .prod-price {
+  font-size:1.4rem;
+}
+
+.box-1 > .prod-price::after {
+  content:"원";
+  font-size:1rem;
+}
+
+.box-1 > .img-box {
+  position:relative;
+  overflow:hidden;
+}
+
+.box-1 > .img-box::after {
+  content:"";
+  display:block;
+  background-color:rgba(0,0,0,0);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  transition:background-color 0.5s;
+}
+
+.box-1 > .img-box::before {
+  content:"view";
+  text-transform:uppercase;
+  font-weight:bold;
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:white;
+  transform:translateX(-50%) translateY(-50%);
+  font-size:1.2rem;
+  border:5px solid white;
+  padding:10px;
+  border-radius:10px;
+  z-index:1;
+  opacity:0;
+  transition:opacity 0.5s;
+}
+
+.box-1:hover > .img-box::after {
+  background-color:rgba(0,0,0,.5);
+}
+
+.box-1:hover > .img-box::before {
+  opacity:1;
+}
+
+.box-1 > .img-box > img {
+  transition:transform 0.5s;
+  /*
+  position:relative;
+  z-index:-1;
+  */
+}
+
+.box-1:hover > .img-box > img {
+  transform:scale(1.2);
+}
